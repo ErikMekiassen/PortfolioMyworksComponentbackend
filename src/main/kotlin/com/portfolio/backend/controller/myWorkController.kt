@@ -23,14 +23,9 @@ class myWorkController(private val jdbi: Jdbi) {
             request.techTitle,
             request.title,
             request.description,
-            request.linktype1,
-            request.link1,
-            request.linktype2,
-            request.link2,
-            request.linktype3,
-            request.link3
+            request.repoLink
         )
         return jdbi.open().use {handle ->
-        handle.execute("INSERT INTO myWorks VALUES ('${workcard.href}', '${workcard.techTitle}', '${workcard.title}', '${workcard.description}', '${workcard.linktype1}', '${workcard.link1}', '${workcard.linktype2}', '${workcard.link2}', '${workcard.linktype3}', '${workcard.link3}')")}
+        handle.execute("INSERT INTO myWorks VALUES ('${workcard.href}', '${workcard.techTitle}', '${workcard.title}', '${workcard.description}', '${workcard.repoLink}')")}
     }
 }
