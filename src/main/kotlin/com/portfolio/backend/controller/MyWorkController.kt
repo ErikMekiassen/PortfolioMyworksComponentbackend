@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*
 @CrossOrigin(origins = ["http://localhost:3000"])
 @RestController
 @RequestMapping("/API")
-class myWorkController(private val jdbi: Jdbi) {
+class MyWorkController(private val jdbi: Jdbi) {
     @GetMapping("/GetProjects")
     fun sendWork(): List<workType> {
         return jdbi.open().use { handle ->
