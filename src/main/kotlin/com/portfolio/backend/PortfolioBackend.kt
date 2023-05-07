@@ -12,7 +12,7 @@ fun main(args: Array<String>) {
 	runApplication<PortfolioBackend>(*args)
 	try {
 		Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver")
-		val connection = DriverManager.getConnection("jdbc:sqlserver://;serverName=10.0.0.20;encrypt=false;", "sa", "Umio13OLF4s")
+		val connection = DriverManager.getConnection("jdbc:sqlserver://;serverName=127.0.0.1;encrypt=false;", "sa", "Umio13OLF4s")
 		println("Connected to the database!")
 		connection.close()
 	} catch(e: SQLException) {

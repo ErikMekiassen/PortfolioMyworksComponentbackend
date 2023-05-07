@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*
 
 @CrossOrigin(origins = ["http://localhost:3000"])
 @RestController
-@RequestMapping("/API")
+@RequestMapping("/FaqAPI")
 class FaqController(private val jdbi: Jdbi) {
     @GetMapping("/getFaq")
     fun getFaq(): List<faqType> {

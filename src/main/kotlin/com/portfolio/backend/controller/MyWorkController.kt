@@ -11,7 +11,7 @@ class MyWorkController(private val jdbi: Jdbi) {
     @GetMapping("/GetProjects")
     fun sendWork(): List<workType> {
         return jdbi.open().use { handle ->
-            handle.createQuery("select * from myWorks")
+            handle.createQuery("select * from MyWorks.dbo.myWorks")
                     .mapTo(workType::class.java)
                     .list()
         }
@@ -26,6 +26,6 @@ class MyWorkController(private val jdbi: Jdbi) {
             request.repoLink
         )
         return jdbi.open().use {handle ->
-        handle.execute("INSERT INTO myWorks VALUES ('${workcard.href}', '${workcard.techTitle}', '${workcard.title}', '${workcard.description}', '${workcard.repoLink}')")}
+        handle.execute("INSERT INTO MyWorks.dbo.myWorks VALUES ('${workcard.href}', '${workcard.techTitle}', '${workcard.title}', '${workcard.description}', '${workcard.repoLink}')")}
     }
 }
